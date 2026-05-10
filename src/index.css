@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-luxury-cream: #FDFCF8;
+  --color-luxury-beige: #E5DCD3;
+  --color-luxury-graphite: #2D2D2D;
+  --color-luxury-burgundy: #6B1B1B;
+  --color-luxury-silver: #C0C0C0;
+  --color-luxury-accent-bg: #F5F2EF;
+}
+
+@layer base {
+  body {
+    @apply bg-luxury-cream text-luxury-graphite font-sans antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif tracking-tight;
+  }
+}
+
+.bento-card {
+  @apply bg-white border border-luxury-beige rounded-2xl p-6 transition-all duration-300 hover:shadow-lg hover:shadow-luxury-beige/40;
+}
+
+.bento-card-dark {
+  @apply bg-luxury-graphite text-white rounded-2xl p-6 transition-all duration-300;
+}
+
+.bento-card-burgundy {
+  @apply bg-luxury-burgundy text-white rounded-2xl p-6 transition-all duration-300;
+}
+
+.label-uppercase {
+  @apply text-[10px] uppercase tracking-[0.3em] font-bold;
+}
+
+/* Custom scrollbar for minimalist look */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-luxury-beige;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-luxury-burgundy/20 hover:bg-luxury-burgundy/40 transition-colors;
+}
